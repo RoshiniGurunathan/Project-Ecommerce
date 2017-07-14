@@ -1,0 +1,7 @@
+com\niit\Dao\ProductDao.class
+com\niit\model\Product.class
+com\niit\configuration\DBConfiguration.class
+com\niit\service\ProductServiceImp.class
+com\niit\giftgallery_backend\App.class
+com\niit\Dao\ProductDaoImp.class
+com\niit\service\ProductService.class
