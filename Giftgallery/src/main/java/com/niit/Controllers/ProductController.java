@@ -24,7 +24,7 @@ private ProductService productService;
 public String getProductForm(Model model)
 {
 	List<Category> categories=productService.getAllCategories();
-	model.addAttribute("category",categories);
+	model.addAttribute("categories",categories);
 	model.addAttribute("product", new Product());
 	return "productform";
 	
@@ -67,7 +67,11 @@ public String deleteProductById(@PathVariable int id){
 
 @RequestMapping("/admin/product/geteditform/{id}")
 public String getEditForm(@PathVariable int id,Model model){
+	List<Category> categories=productService.getAllCategories();
+	model.addAttribute("categories",categories);
 	Product product=productService.getProductById(id);
+	System.out.println(product);
+	
 	model.addAttribute("productObj",product);
 	return "editform";
 }

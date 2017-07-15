@@ -71,7 +71,7 @@ body{
     <div class="form-group">
       <label class="control-label col-sm-2" for="description">Select Category:</label>
       <div class="col-sm-10">
-       <c:forEach items="${category}" var="c">
+       <c:forEach items="${categories}" var="c">
         <form:radiobutton path="category.id" value="${c.id}"/>${c.categoryName}
       </c:forEach></div>
     </br>

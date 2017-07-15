@@ -5,6 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body{
+background-color: LightCoral;
+}
+h1{
+text-align:center;
+}</style>
 </head>
 <body>
 <h1>Products Added successfully</h1>

@@ -83,7 +83,7 @@ background-color:black;
 		<ul class="nav navbar-nav navbar-left">
 				<li><h5> We Accept</h5></li>
 				<c:url value="/resources/images/footer/msv.jpg" var="wat"></c:url>
-				<li><img src="${wat} width="100" height="50"/></li>
+				<li><img src="${wat}" width="100" height="50"/></li>
 				<c:url value="/resources/images/footer/rp.jpeg" var="fb"></c:url>
 				<li><img src="${fb}" width="50" height="50"/></li>
 				<c:url value="/resources/images/footer/mst.png" var="go"></c:url>

@@ -28,19 +28,19 @@ table-align:center;
 </br>
 </br>
 <H1 id="prod">Product Details</H1>
-<table id="t">
+<table id="t" class="table">
 <tbody>
-<tr><td>Product Name:</td><td>${product.productName}</td>
+<tr class="danger"><td>Product Name:</td><td>${product.productName}</td>
 </tr>
 <tr>
 <td>Description:</td><td>${product.description}</td>
 </tr>
-<tr>
+<tr class="danger">
 <td>Quantity:</td><td>${product.quantity}</td>
 </tr>
 <tr>
 <td>Price:</td><td>${product.price}</td></tr>
-<tr>
+<tr  class="danger">
 <td>Category:</td><td>${product.category.categoryName}</td>
 </tr>
 

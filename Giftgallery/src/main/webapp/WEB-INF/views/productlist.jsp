@@ -25,11 +25,11 @@ body{
 <div class="container">
 <table class="table table-striped">
 <thead>
-<tr><th>ID</th><th>Name</th><th>Category</th><th>Description</th><th>Quantity</th><th>Price</th><th>Action</tr>
+<tr class="info"><th>ID</th><th>Name</th><th>Category</th><th>Description</th><th>Quantity</th><th>Price</th><th>Action</tr>
 </thead>
 <tbody>
 <c:forEach items="${products}" var="p">
-<tr><td>${p.id}</td><td>${p.productName}</td><td>${p.category.categoryName}<td>${p.description}</td><td>${p.quantity}</td><td>${p.price}</td>
+<tr class="danger"><td>${p.id}</td><td>${p.productName}</td><td>${p.category.categoryName}<td>${p.description}</td><td>${p.quantity}</td><td>${p.price}</td>
 <c:url value="/all/product/viewproduct/${p.id}" var="viewUrl" ></c:url>
 <td><a href="${viewUrl}"><span class="glyphicon glyphicon-info-sign"></span></a>
 
