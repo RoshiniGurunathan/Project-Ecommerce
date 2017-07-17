@@ -1,25 +1,30 @@
 package com.niit.model;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)		// Auto generation of ID Numbers
-	private int id;
+	private int id;				
+// Product Form Validation
+	@NotEmpty(message="product name cannot be empty")
 	private String productName;
+	@Min(value=50)						//validation constraint
 	private double price;
 	private int quantity;
+	@NotEmpty(message="description cannot be blank")
 	private String description;
 	
 	//foreign key refers primary key column
-	
 	
 	@ManyToOne
 	@JoinColumn(name="cid")
@@ -61,4 +66,6 @@ public class Product {
 	public int getId() {
 		return id;
 	}
-}
+	
+	}
+

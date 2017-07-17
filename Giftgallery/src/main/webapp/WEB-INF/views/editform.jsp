@@ -14,29 +14,36 @@ background-color: LightCoral;
 </head>
 <body>
 <c:url value="/admin/product/editproduct" var="editurl"></c:url>
-<form:form action="${editurl }"  modelAttribute="productObj">
+<form:form action="${editurl}"  modelAttribute="productObj">
 <form:hidden path="id"/>
 <table align="center">
-<br><br>
+<br>
+<br>
 <tr>
 <td><h3>Enter Product Name </h3></td><td> 
-<form:input  type="name" class="form-control" placeholder="Enter Product Name" path="productName"/></td></tr>
+<form:input  path="productName" class="form-control"  name="productName"></form:input>
+<form:errors path="productName" cssStyle="color:red"></form:errors>     
+</td></tr>
 <tr>
 <td><h3>Enter Price</h3></td><td>  
-<form:input  class="form-control" path="price"/></td></tr>
+<form:input path="price" class="form-control" name="price"></form:input>
+        <form:errors path="price" cssStyle="color:red"></form:errors>
+</td></tr>
 <tr>
 <td>
 <h3>Enter Quantity </h3></td> <td>
- <form:input  type="number" class="form-control"  path="quantity"/></td></tr>
+ <form:input  path="quantity" class="form-control" name="quantity"></form:input></td></tr>
 <tr>
 <td>
 <h3>Enter Description </h3></td> 
-<td><form:textarea  class="form-control" placeholder="Description" rows="4" cols="50" path="description"/></td></tr>
+<td><form:textarea  class="form-control"  rows="5" cols="50" path="description"/>
+        <form:errors path="description" cssStyle="color:red"></form:errors>
+</td></tr>
 <tr><td><h3>Select Category:</h3></td> <td><c:forEach items="${categories}" var="c">
 
 <form:radiobutton path="category.id" value="${c.id }"/>${c.categoryName }</c:forEach></td>
 <tr>
-<td>
+<td align="center" colspan=2>
 <h3><input type="submit" value="Add Product"></h3></td></tr>
 
 </table>

@@ -30,18 +30,18 @@ table-align:center;
 <H1 id="prod">Product Details</H1>
 <table id="t" class="table">
 <tbody>
-<tr class="danger"><td>Product Name:</td><td>${product.productName}</td>
+<tr class="danger"><td><h3>Product Name:</h3></td><td><h3>${product.productName}</h3></td>
 </tr>
 <tr>
-<td>Description:</td><td>${product.description}</td>
+<td><h3>Description:</h3></td><td><h3>${product.description}</h3></td>
 </tr>
 <tr class="danger">
-<td>Quantity:</td><td>${product.quantity}</td>
+<td><h3>Quantity:</h3></td><td><h3>${product.quantity}</h3></td>
 </tr>
 <tr>
-<td>Price:</td><td>${product.price}</td></tr>
+<td><h3>Price:</h3></td><td><h3>${product.price}</h3></td></tr>
 <tr  class="danger">
-<td>Category:</td><td>${product.category.categoryName}</td>
+<td><h3>Category:</h3></td><td><h3>${product.category.categoryName}</h3></td>
 </tr>
 
 </tbody>

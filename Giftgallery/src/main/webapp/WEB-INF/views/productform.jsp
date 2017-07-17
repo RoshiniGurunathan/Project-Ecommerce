@@ -46,25 +46,28 @@ body{
     <div class="form-group">
       <label class="control-label col-sm-2" for="productName">Product Name:</label>
       <div class="col-sm-10">
-        <input path="productName" class="form-control" id="productName" placeholder="Enter product name" name="productName">
+        <form:input path="productName" class="form-control" id="productName"  name="productName"></form:input>
+		<form:errors path="productName" cssStyle="color:red"></form:errors>     
       </div>
     </div></br>
     <div class="form-group">
       <label class="control-label col-sm-2" for="price">Product Price:</label>
       <div class="col-sm-10">          
-        <input path="price"  class="form-control" id="price" placeholder="Enter price" name="price">
+        <form:input path="price"  class="form-control" id="price" name="price"></form:input>
+        <form:errors path="price" cssStyle="color:red"></form:errors>
       </div>
     </div></br>
       <div class="form-group">
       <label class="control-label col-sm-2" for="productquantity">Product Quantity:</label>
       <div class="col-sm-10">
-        <input path="quantity"  class="form-control" id="quantity" placeholder="Enter product quantity" name="quantity">
+        <form:input path="quantity"  class="form-control" id="quantity" name="quantity"></form:input>
       </div>
     </div></br>
     <div class="form-group">
       <label class="control-label col-sm-2" for="description">Product Description:</label>
       <div class="col-sm-10">
-        <input path="description" class="form-control" id="description" placeholder="Enter product description" name="description">
+        <form:input path="description" class="form-control" id="description"  name="description"></form:input>
+    	<form:errors path="description" cssStyle="color:red"></form:errors>     
       </div>
     </div></br>
     
