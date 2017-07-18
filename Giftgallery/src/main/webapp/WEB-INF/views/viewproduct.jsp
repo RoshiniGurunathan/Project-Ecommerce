@@ -30,6 +30,9 @@ table-align:center;
 <H1 id="prod">Product Details</H1>
 <table id="t" class="table">
 <tbody>
+<tr>
+<c:url value="/resources/images/${product.id }.jpg" var="prodimg"></c:url>
+<td><img src="${prodimg}" height="75" width="75"></td></tr>
 <tr class="danger"><td><h3>Product Name:</h3></td><td><h3>${product.productName}</h3></td>
 </tr>
 <tr>

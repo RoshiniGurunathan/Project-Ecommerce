@@ -55,7 +55,7 @@ text-align:center;
    <i><div class="pager">"...Make Your Time As Your Lovable Moment...,"</div></i>
    </br>
    </br>
-   <div class id="btn" class="container">
+   <div id="btn" class="container">
  		 <h2 id="h2">......Our Products......</h2>
  		 <button type="button" class="btn btn-warning btn-md">Hand Made Craft</button>
  		 <button type="button" class="btn btn-primary btn-md">Animated Photo Frames</button>

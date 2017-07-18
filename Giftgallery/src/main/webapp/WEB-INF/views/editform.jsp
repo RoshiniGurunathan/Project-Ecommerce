@@ -14,7 +14,7 @@ background-color: LightCoral;
 </head>
 <body>
 <c:url value="/admin/product/editproduct" var="editurl"></c:url>
-<form:form action="${editurl}"  modelAttribute="productObj">
+<form:form action="${editurl}"  modelAttribute="productObj" enctype="multipart/form-data">
 <form:hidden path="id"/>
 <table align="center">
 <br>
@@ -39,9 +39,12 @@ background-color: LightCoral;
 <td><form:textarea  class="form-control"  rows="5" cols="50" path="description"/>
         <form:errors path="description" cssStyle="color:red"></form:errors>
 </td></tr>
-<tr><td><h3>Select Category:</h3></td> <td><c:forEach items="${categories}" var="c">
+<tr><td><h3>Select Category</h3></td> <td><c:forEach items="${categories}" var="c">
 
-<form:radiobutton path="category.id" value="${c.id }"/>${c.categoryName }</c:forEach></td>
+<form:radiobutton path="category.id" value="${c.id }"/>${c.categoryName }</c:forEach></td></tr>
+<tr><td><h3>Add Image</h3></td><td class="form-group" colspan=2>
+    	<input type="file" name="image">
+    </td></tr>
 <tr>
 <td align="center" colspan=2>
 <h3><input type="submit" value="Add Product"></h3></td></tr>

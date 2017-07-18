@@ -1,5 +1,9 @@
 package com.niit.Controllers;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -11,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.model.Category;
 import com.niit.model.Product;
@@ -41,6 +46,17 @@ public String saveProduct(@Valid @ModelAttribute(name="product") Product product
 		return "productform";
 	}
 		productService.saveProduct(product);
+		MultipartFile image=product.getImage();
+		Path path=Paths.get("E:/eclipse/New folder/Giftgallery/src/main/webapp/WEB-INF/resources/images/"+product.getId()+".jpg");
+		try {
+			image.transferTo(new File(path.toString()));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "redirect:/all/product/getallproducts";
 	
 	
@@ -93,6 +109,17 @@ if(result.hasErrors()){
 	return "editform";
 }
 	productService.updateProduct(product);
+	MultipartFile image=product.getImage();
+	Path path=Paths.get("E:/eclipseNew folder/Giftgallery/src/main/webapp/WEB-INF/resources/images/"+product.getId()+".jpg");
+	try {
+		image.transferTo(new File(path.toString()));
+	} catch (IllegalStateException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	return"redirect:/all/product/getallproducts";
 }
 

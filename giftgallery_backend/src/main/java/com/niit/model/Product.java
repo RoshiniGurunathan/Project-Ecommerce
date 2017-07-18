@@ -5,9 +5,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
@@ -20,6 +22,7 @@ public class Product {
 	private String productName;
 	@Min(value=50)						//validation constraint
 	private double price;
+	@Min(value=1)
 	private int quantity;
 	@NotEmpty(message="description cannot be blank")
 	private String description;
@@ -29,6 +32,9 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="cid")
 	private Category category;   //child table    
+	@Transient
+	private MultipartFile image;
+	
 	
 	public void setId(int id) {
 		this.id = id;
@@ -65,6 +71,12 @@ public class Product {
 	}
 	public int getId() {
 		return id;
+	}
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
 	}
 	
 	}

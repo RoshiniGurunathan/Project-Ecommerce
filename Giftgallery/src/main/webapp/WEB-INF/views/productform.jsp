@@ -39,10 +39,13 @@ body{
 </div>
 </br>
 </br>
-<form:form action="saveproduct" method="post" modelAttribute="product">
-  <form:hidden path="id"/>
+<form:form action="saveproduct" method="post" modelAttribute="product" enctype="multipart/form-data">
+  
  <div class="container">
   <form class="form-horizontal" >
+  		<div class="form-group">
+ 			 <form:hidden path="id"/>
+  		</div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="productName">Product Name:</label>
       <div class="col-sm-10">
@@ -77,7 +80,10 @@ body{
        <c:forEach items="${categories}" var="c">
         <form:radiobutton path="category.id" value="${c.id}"/>${c.categoryName}
       </c:forEach></div>
-    </br>
+   
+    <div class="form-group">
+    	<input type="file" name="image">
+    </div>
    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
